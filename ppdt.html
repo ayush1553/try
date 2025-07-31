@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PPDT - SSB Preparation</title>
+    <style>
+        .practice-btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            background: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .practice-btn:hover { background: #145a86; }
+        .sample-btn {
+            display: inline-block;
+            margin: 20px 0 30px 0;
+            padding: 12px 28px;
+            font-size: 1.1em;
+            background: #8e44ad;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .sample-btn:hover { background: #5e3370; }
+        .desc-btn {
+            display: inline-block;
+            margin: 25px 0 10px 0;
+            padding: 14px 36px;
+            font-size: 1.1em;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .desc-btn:hover { background: #1e8449; }
+        .desc-box {
+            display: none;
+            margin: 0 auto 30px auto;
+            max-width: 700px;
+            background: #eafaf1;
+            color: #222;
+            border: 1px solid #27ae60;
+            border-radius: 10px;
+            padding: 24px 30px;
+            font-size: 1.1em;
+            text-align: left;
+        }
+    </style>
+    <script>
+        function showPpdtDesc() {
+            document.getElementById('desc-box').style.display = 'block';
+            document.getElementById('desc-btn').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <h1>PPDT</h1>
+    <button id="desc-btn" class="desc-btn" onclick="showPpdtDesc()">Description</button>
+    <div id="desc-box" class="desc-box">
+        <strong>About PPDT:</strong><br>
+        The Picture Perception and Discussion Test (PPDT) is a part of the SSB selection process. Candidates are shown a picture for a short time and must write a story based on it. This test assesses your observation, imagination, and communication skills, as well as your ability to work in a group during the discussion phase.
+    </div>
+    <a href="/ppdt/samples" class="sample-btn">What is PPDT?</a>
+    <p>Select a practice set to view the image for 30 seconds and than write a generic story on that picture in 4 minutes</p>
+    <div>
+        {% for i in range(1, 11) %}
+            <a href="/ppdt/practice/{{ i }}" class="practice-btn">PPDT Practice {{ i }}</a>
+        {% endfor %}
+    </div>
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html> 
